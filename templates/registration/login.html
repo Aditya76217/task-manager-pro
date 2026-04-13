@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Login — TaskManager Pro{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card glass-card">
+        <!-- Header -->
+        <div class="auth-header text-center">
+            <div class="auth-icon mb-3">
+                <i class="bi bi-kanban"></i>
+            </div>
+            <h1 class="h3 fw-bold">Welcome Back</h1>
+            <p class="text-muted">Sign in to your TaskManager Pro account</p>
+        </div>
+
+        <!-- Login Form -->
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.errors %}
+            <div class="alert alert-danger glass-alert py-2 px-3">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Invalid username or password. Please try again.
+            </div>
+            {% endif %}
+
+            <!-- Username -->
+            <div class="mb-3">
+                <label for="id_username" class="form-label">
+                    <i class="bi bi-person me-1"></i> Username
+                </label>
+                <input type="text" name="username" id="id_username"
+                       class="form-control glass-input"
+                       placeholder="Enter your username"
+                       autofocus required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-4">
+                <label for="id_password" class="form-label">
+                    <i class="bi bi-lock me-1"></i> Password
+                </label>
+                <input type="password" name="password" id="id_password"
+                       class="form-control glass-input"
+                       placeholder="Enter your password"
+                       required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-accent w-100 py-2 fw-semibold">
+                <i class="bi bi-box-arrow-in-right me-2"></i> Sign In
+            </button>
+        </form>
+
+        <!-- Register Link -->
+        <div class="text-center mt-4">
+            <span class="text-muted">Don't have an account?</span>
+            <a href="{% url 'register' %}" class="text-accent text-decoration-none fw-semibold ms-1">
+                Create one <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

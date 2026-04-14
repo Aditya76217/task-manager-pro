@@ -1,6 +1,6 @@
 # 🚀 TaskManager Pro
 
-A modern, full-stack **Kanban board task management application** built with Django, Bootstrap 5, and vanilla JavaScript.
+A modern, full-stack **task management application** built with Django, Bootstrap 5, and vanilla JavaScript.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![Django](https://img.shields.io/badge/Django-4.2-green)
